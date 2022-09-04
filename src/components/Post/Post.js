@@ -5,7 +5,7 @@ import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
-import InputOption from "./InputOption";
+import InputOption from "../InputOption/InputOption";
 
 //forward ref animation --steps
 //1. cover our arrow functional component with forwardRef
@@ -20,7 +20,7 @@ const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
         <Avatar src={photoUrl}> {name[0]}</Avatar>
 
         <div className="post__info">
-          <h2>{name}</h2>
+          <h4>{name}</h4>
           <p>{description}</p>
         </div>
       </div>

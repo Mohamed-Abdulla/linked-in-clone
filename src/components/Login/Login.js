@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import "./Login.css";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  updateProfile,
-  getAuth,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, getAuth } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { login } from "./features/userSlice";
+import { login } from "../../redux/userSlice";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -71,17 +66,13 @@ function Login() {
           placeholder="Full name (required if registering)"
         />
         <input type="text" placeholder="Profile pic URL (optional)" />
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-        />
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
+          required
         />
         <button type="submit" onClick={loginApp}>
           Sign In
